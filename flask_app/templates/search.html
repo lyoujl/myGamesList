@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/search_style.css') }}">
+    <title>Search for a game</title>
+</head>
+<body>
+    <div id="header">
+        <h1>Search for a game</h1>
+        <form id="headForm" action='/logout'>
+            <input id="headButton" type='submit' value='Log Out'>
+        </form>
+    </div>
+    
+    <div id="search">
+        <form action='/search/results' method='POST'>
+            <label for="title">Title:</label>
+            <input id="textBox" type="text" id="tags" name="title">
+
+            <input id="searchButton" type='submit' value='Search'>
+        </form>
+        <form action='/dashboard'>
+            <input id="cancelButton" type='submit' value='Cancel'>
+        </form>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% for game in games %}
+        <div id="results">
+            <a href="/new/{{game.name}}">{{game.name}}</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

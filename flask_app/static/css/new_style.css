@@ -1,0 +1,83 @@
+* {
+    margin-left: 4%;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#headForms {
+    margin-right: 22%;
+    display: flex;
+}
+
+.headButton {
+    margin-top: 30px;
+    width: 80px;
+    height: 30px;
+}
+
+#title > input {
+    width: 450px;
+}
+
+#formLeft, #formRight {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#formRight {
+    margin-left: 6%;
+}
+
+#title, .inputDiv, #review {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#title {
+    width: 350px;
+}
+
+input {
+    height: 20px;
+}
+
+select {
+    height: 25px;
+}
+
+#platform {
+    width: 180px;
+}
+
+#score {
+    width: 50px;
+}
+
+#review, textarea {
+    margin-left: 5%;
+    display: block;
+}
+
+textarea {
+    resize: none;
+    width: 450px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+#cancelButton, #addButton {
+    width: 65px;
+    height: 25px;
+}
+
+#cancelButton {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}

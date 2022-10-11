@@ -1,0 +1,68 @@
+* {
+    margin-left: 4%;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header > form {
+    margin-right: 22%;
+}
+
+#headButton {
+    margin-top: 30px;
+    width: 80px;
+    height: 30px;
+}
+
+#cancelButton, #updateButton {
+    width: 65px;
+    height: 25px;
+}
+
+#cancelButton {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+#title {
+    display: flex;
+    width: 350px;
+}
+
+#formLeft, #formRight {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#formLeft {
+    width: 250px;
+}
+
+#formRight {
+    width: 200px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 50px;
+    height: 25px;
+}
+
+#review, textarea {
+    margin-left: 4.5%;
+    display: block;
+}
+
+textarea {
+    resize: none;
+    width: 450px;
+    height: 250px;
+    margin-bottom: 20px;
+}

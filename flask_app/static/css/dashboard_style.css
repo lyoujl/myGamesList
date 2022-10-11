@@ -1,0 +1,35 @@
+* {
+    margin-left: 4%;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#headForm {
+    margin-right: 22%;
+}
+
+#headButton {
+    margin-top: 30px;
+    width: 80px;
+    height: 30px;
+}
+
+#add {
+    width: 100px;
+    height: 30px;
+    margin-left: -0.05%;
+}
+
+table {
+    margin-top: 10px;
+    border-style: solid;
+    width: 75%;
+}
+
+td {
+    text-align: center;
+    padding: 7px;
+}

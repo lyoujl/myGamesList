@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit_style.css') }}">
+    <title>Edit Game</title>
+</head>
+<body>
+    <div id="header">
+        <h1>Edit {{cur_game.title}}</h1>
+        <form action='/logout'>
+            <input id="headButton" type='submit' value='Log Out'>
+        </form>
+    </div>
+
+    <form action='/dashboard'>
+        <input id="cancelButton" type='submit' value='Back'>
+    </form>
+
+    <form action='/edit/update' method='POST'>
+        <div id="title">
+            <p>Title:</p>
+            <p>{{cur_game.title}}</p>
+        </div>
+        
+
+        <div id="formLeft">
+            <p>Platform:</p>
+            <p>{{cur_game.platform}}</p>
+            
+            <label for="score">Score:</label>
+            <select name="score">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+        </div>
+
+        <div id="formRight">
+            <p>Genre:</p>
+            <p>{{cur_game.genre}}</p>
+
+            <p>Release Date:</p>
+            <p>{{cur_game.release_date}}</p>
+        </div>
+
+        <label id="review" for="review">Review:</label>
+        <textarea name="review">{{cur_game.review}}</textarea>
+
+        <input id="updateButton" type='submit' value='Update'>
+
+        <input type="hidden" name="id" value={{cur_game.id}}>
+    </form>
+</body>
+</html>

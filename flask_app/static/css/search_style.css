@@ -1,0 +1,46 @@
+#header {
+    display: flex;
+    margin-left: 15%;
+    justify-content: space-between;
+}
+
+#headForm {
+    margin-right: 20%;
+}
+
+#headButton {
+    margin-top: 30px;
+    width: 70px;
+    height: 25px;
+}
+
+#search {
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
+#textBox {
+    width: 400px;
+    height: 20px;
+}
+
+#cancelButton {
+    margin-top: 15px;
+}
+
+#searchButton, #cancelButton {
+    width: 65px;
+    height: 25px;
+}
+
+form{ 
+    display: inline;
+}
+
+p {
+    display: inline;
+}
+
+#results {
+    margin-top: 10px;
+}

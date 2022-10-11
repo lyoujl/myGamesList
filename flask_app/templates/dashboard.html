@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard_style.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div id="header">
+        <h1>Welcome, {{cur_user.username}}</h1>
+        <form id="headForm" action='/logout'>
+            <input id="headButton" type='submit' value='Log Out'>
+        </form>
+    </div>
+    <div>
+        <h2>Your played games</h2>
+
+        <form action='/search'>
+            <input id="add" type='submit' value='Add a game'>
+        </form>
+
+        <table>
+            <thead>
+                <th>Title</th>
+                <th>Platform</th>
+                <th>Genre</th>
+                <th>Release Date</th>
+                <th>Score</th>
+                <th>Review</th>
+                <th>Actions</th>
+            </thead>
+            {% for one_game in dash_games %}
+                <tr>
+                    <td>{{one_game.title}}</td>
+                    <td>{{one_game.platform}}</td>
+                    <td>{{one_game.genre}}</td>
+                    <td>{{one_game.release_date}}</td>
+                    <td>{{one_game.score}}</td>
+                    <td>
+                        {% if cur_user.id == one_game.player_id %}
+                            <a href="/review/{{one_game.games_id}}">view</a>
+                            <a href="/edit/{{one_game.games_id}}">edit review</a>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if cur_user.id == one_game.player_id %}
+                            <a href="/delete/{{one_game.games_id}}">remove</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
