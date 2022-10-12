@@ -32,24 +32,26 @@
                 <th>Actions</th>
             </thead>
             {% for one_game in dash_games %}
-                <tr>
-                    <td>{{one_game.title}}</td>
-                    <td>{{one_game.platform}}</td>
-                    <td>{{one_game.genre}}</td>
-                    <td>{{one_game.release_date}}</td>
-                    <td>{{one_game.score}}</td>
-                    <td>
-                        {% if cur_user.id == one_game.player_id %}
-                            <a href="/review/{{one_game.games_id}}">view</a>
-                            <a href="/edit/{{one_game.games_id}}">edit review</a>
-                        {% endif %}
-                    </td>
-                    <td>
-                        {% if cur_user.id == one_game.player_id %}
-                            <a href="/delete/{{one_game.games_id}}">remove</a>
-                        {% endif %}
-                    </td>
-                </tr>
+                {% if cur_user.id == one_game.player_id %}
+                    <tr>
+                        <td>{{one_game.title}}</td>
+                        <td>{{one_game.platform}}</td>
+                        <td>{{one_game.genre}}</td>
+                        <td>{{one_game.release_date}}</td>
+                        <td>{{one_game.score}}</td>
+                        <td>
+                            {% if cur_user.id == one_game.player_id %}
+                                <a href="/review/{{one_game.games_id}}">view</a>
+                                <a href="/edit/{{one_game.games_id}}">edit review</a>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if cur_user.id == one_game.player_id %}
+                                <a href="/delete/{{one_game.games_id}}">remove</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endif %}
             {% endfor %}
         </table>
     </div>

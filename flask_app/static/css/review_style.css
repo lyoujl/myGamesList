@@ -1,0 +1,34 @@
+* {
+    margin-left: 4%;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#headForm {
+    margin-right: 22%;
+}
+
+#headButton {
+    margin-top: 30px;
+    width: 80px;
+    height: 30px;
+}
+
+#cancelButton {
+    width: 65px;
+    height: 25px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+#score {
+    margin-left: 8%;
+}
+
+p {
+    margin-left: 12%;
+    font-size: 18px;
+}
